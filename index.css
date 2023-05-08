@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content"
+    "sidebar content";
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: #1992d4;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+svg {
+  fill: #fff;
+  height: 1rem;
+}
+
+h1 svg {
+  height: 2rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #1992d4;
+  color: #fff;
+  padding: 15px;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 15px;
+}
+
+.sidebar ul li,
+h1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fff;
+  padding: 15px;
+  display: grid;
+}
+
+.header svg {
+  fill: #000;
+}
+
+.search-bar {
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 10px;
+}
+
+.content {
+  padding: 15px;
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "cards announcements"
+    "cards trends";
+  gap: 15px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  grid-area: cards;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  border-left: 7px solid #f0b42a;
+}
+
+.card svg {
+    fill: #000;
+    height: 1rem;
+}
+
+.section-title,
+.card-header,
+.announcement-title {
+  font-weight: bold;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trends-box,
+.announcements-box {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.announcement {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+
+.announcement:last-of-type {
+  border: none;
+}
+
+.card-text,
+.announcement-text {
+  color: #828282;
+  font-size: 0.8rem;
+}
+
+.trends {
+  grid-area: trends;
+}
