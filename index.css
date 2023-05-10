@@ -10,7 +10,7 @@
 body {
   background-color: #e2e8f0;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas:
     "sidebar header"
     "sidebar content"
@@ -30,6 +30,11 @@ button {
   padding: 5px 20px;
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: #105b84;
+}
+
 svg {
   fill: #fff;
   height: 1rem;
@@ -37,10 +42,11 @@ svg {
 
 h1 {
   padding-bottom: 40px;
+  font-size: 1.3rem;
 }
 
 h1 svg {
-  height: 2rem;
+  height: 1.7rem;
 }
 
 .sidebar {
@@ -61,13 +67,26 @@ h1 {
   grid-template-columns: auto auto;
   justify-content: left;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: rgba(226, 232, 240, 0.2);
+  cursor: pointer;
+}
+
+.communities {
+  margin-bottom: 30px;
 }
 
 .header {
   grid-area: header;
   background-color: #fff;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 1fr auto;
@@ -76,6 +95,7 @@ h1 {
     "search-bar user-info"
     "greeting menu";
   gap: 10px;
+  font-weight: bold;
 }
 
 .header svg {
@@ -88,6 +108,18 @@ h1 {
   align-items: center;
   gap: 10px;
   grid-area: search-bar;
+}
+
+input {
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 20px;
+  padding: 3px;
+  color: #1992d4;
+}
+
+ input:focus {
+  outline: 2px solid #1992d4;
 }
 
 .user-info {
@@ -121,11 +153,7 @@ h1 {
   grid-area: menu;
 }
 
-input {
-  background-color: #e2e8f0;
-  border: none;
-  border-radius: 10px;
-}
+
 
 .avatar {
   background-color: #facc15;
@@ -145,7 +173,8 @@ input {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
   gap: 15px;
   grid-area: cards;
 }
@@ -165,6 +194,12 @@ aside {
 .card svg {
   fill: #000;
   height: 1.5rem;
+  margin-right: 5px;;
+}
+
+.card svg:hover {
+  cursor: pointer;
+  fill: #f0b42a;
 }
 
 .card-icons {
@@ -207,10 +242,15 @@ aside {
 }
 
 .card-text,
-.announcement-text,
 .project-name {
   color: #828282;
   font-size: 0.7rem;
+}
+
+.announcement-text {
+  color: #828282;
+  font-size: 0.6rem;
+
 }
 
 .trends-box {
